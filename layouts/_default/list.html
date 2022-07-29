@@ -1,11 +1,11 @@
 {{ partial "header.html" . -}}
-<header><h1 id="tag_{{ .Title }}">{{ .Title | title }}</h1></header>
-<article>
+<article class="container">
 {{ .Content -}}
-<ul>
+<ul class="list">
 {{- range.Pages }}
-	<li><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006 Jan 02" }}</time> &ndash; <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+	<a href="{{ .RelPermalink }}"><li class="list-item">{{ .Title }} &ndash; <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 02 2006" }}</time></li></a>
 {{ end -}}
 </ul>
 </article>
+<br>
 {{- partial "footer.html" . }}
